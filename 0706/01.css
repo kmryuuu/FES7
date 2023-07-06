@@ -1,0 +1,24 @@
+/* 구글 폰트 삽입 */
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100&display=swap');
+
+body {
+    color: red;
+}
+
+/* 기본적으로 굵어서 normal로 해줘야 원래 폰트 굵기대로 나옴 */
+h1, h2 {
+    font-weight: normal;
+}
+
+h1 {
+    color: inherit;
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+strong {
+    border-bottom: 5px solid currentColor;
+}
+
+h2 {
+    color: royalblue;
+}
