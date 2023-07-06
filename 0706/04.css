@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'DOSGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/DOSGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'DOSGothic';
+    text-align: center;
+}
+
+.text1, .text2 {
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 1rem;
+    word-break: normal;
+    line-height: 20px;
+}
+
+.underline {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.date {
+    color: gray;
+}

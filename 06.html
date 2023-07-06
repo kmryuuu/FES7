@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조적 가상 선택자</title>
+    <link rel="stylesheet" href="./06.css">
+
+    <style>
+        /* 형제 중에 첫번째 */
+
+        /* ol :first-child {
+            color: red;
+        } */
+
+        li:last-child {
+            color: green;
+        }
+
+        /* li:nth-child(4) {
+            color: royalblue;
+        } */
+
+        /* 홀수 */
+        li:nth-child(2n+1) {
+            color: royalblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- li{리스트}*8 -->
+    <ol>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+    </ol>
+    <ol>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+    </ol>
+</body>
+
+</html>

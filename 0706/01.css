@@ -1,5 +1,22 @@
-/* 구글 폰트 삽입 */
+/* import 구글 폰트 삽입 */
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100&display=swap');
+
+/* font- face 눈누 폰트 삽입 */
+@font-face {
+	font-family: 'PyeongChangPeace-Bold';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'pretendard-Regular';
+	src: url('./font/pretendard-Regular.ttf');
+}
+
+.pyfont {
+	font-family: 'PyeongChangPeace-Bold';
+}
 
 body {
     color: red;
