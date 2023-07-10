@@ -2,14 +2,77 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>카드 UI</title>
+	<style>
+		@font-face {
+			font-family: 'Pretendard-Regular';
+			src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		body {
+			font-family: 'Pretendard-Regular';
+		}
+
+		.card {
+			background-image: url(./images/thumbnail.png);
+			background-repeat: no-repeat;
+			width: 288px;
+			height: 348px;
+			border-radius: 8px;
+			background-color: #fff;
+			box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.10);
+			position: relative;
+		}
+
+		.text-wrap {
+			width: 256px;
+			position: absolute;
+			padding-left: 16px;
+		}
+
+		.title-text {
+			margin-top: 220px;
+			color: #29363D;
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.sub-text {
+			color: #5A6A72;
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 20px;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+		}
+
+		.bottom-text {
+			color: #29363D;
+			font-size: 14px;
+			font-weight: 700;
+			text-decoration: underline;
+		}
+	</style>
 </head>
 
 <body>
-
+	<div class="card">
+		<!-- <img src="./images/thumbnail.png" alt="컴퓨터와 책상"> -->
+		<div class="text-wrap">
+			<p class="title-text">그것을 피가 청춘을 것이다</p>
+			<p class="sub-text">청춘의 하였으며, 이것은 몸이 때문이다. 사는가 고동을 용기가 충분히 청춘 것이다. 얼마나 반짝이는 소담...운 열락의 아름다우냐? 가지에 같지 청춘의 옷을
+				목숨을
+				피어나기 오직 군영과 칼이다. 거친 끓는 예가 뿐이다. 방지하는 꽃이 청춘을 생명을 이것이다. 인간의 거선의 피고, 모래뿐일 작고 우리 평화스러운 있는가?</p>
+			<p class="bottom-text">Read</p>
+		</div>
+	</div>
 </body>
 
 </html>

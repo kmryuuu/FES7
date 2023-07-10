@@ -1,0 +1,86 @@
+body,
+h1, 
+h2,
+p {
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff')
+      format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+body {
+    font-family: 'Pretendard-Regular';
+    color: #29363D
+}
+
+h1, 
+h2 {
+    /* 브라우저에서 기본으로 제공하는 굵기, 크기를 초기화 */
+    font: inherit;
+}
+
+a {
+    /* 기본이 파란색이지만 부모에게 상속받겠다 */
+    color: inherit;
+    text-decoration: none;
+}
+
+.card-ui {
+    width: 288px;
+    border-radius: 8px;
+    /* hidden은 잘리는 요소가 있을 수 있고 마크가 안보일 수 있다. */
+    /* overflow: hidden; */
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.10);
+}
+
+.card-ui img {
+    width: 100%;
+    aspect-ratio: 288/196;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-ui h2 {
+    font-family: 'Pretendard-Bold';
+}
+
+.card-ui p {
+    font-size: 14px;
+    color: #5A6A72;
+}
+
+.card-ui .content {
+    font-size: 14px;
+    color: #5a6a72;
+    margin: 16px 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* 행간 20 나누기 폰트 크기 16 = 1.6배 하겠다 */
+    line-height: 1.6;
+}
+
+.card-ui .read {
+    text-decoration: underline;
+    font-family: 'Pretendard-Bold';
+    font-size: 14px;
+    color: #29363D;
+    padding-left: 6px;
+}
+
+.card-ui .text-group {
+    padding: 24px 16px 16px;
+}
