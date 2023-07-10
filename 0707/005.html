@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border</title>
+<style>
+    div {
+        margin: 30px;
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+    }
+
+    .box1 {
+        border-radius: 100px;
+    }
+
+    .box2 {
+        border-radius: 10px;
+    }
+
+    .box3 {
+        border-radius: 100px 0 0 0;
+    }
+
+    .box4 {
+        /* 100px 0 100px 0이 반복된걸 적어줌 */
+        border-radius: 100px 0;
+    }
+
+    .box5 {
+        /* 0px 50 0 50px이 반복된걸 적어줌 */
+        border-radius: 0 50px;
+    }
+
+    .box6 {
+        height: 50px;
+        border-radius: 100px 100px 0 0;
+    }
+</style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>마진 병합</title>
+	<style>
+		body {
+			color: #fff;
+			font-size: 40px;
+			background-color: yellow;
+		}
+
+		p {
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+		}
+
+		.a {
+			background: salmon;
+			margin: 20px;
+		}
+
+		.b {
+			background: slateblue;
+			margin: 30px 20px;
+			border: 1px solid black;
+		}
+
+		/* div {
+			/* margin: 50px; */
+		background: skyblue;
+		border: 1px solid black;
+		}
+
+		*/ .c {
+			background: seagreen;
+			margin: 20px;
+			border: 1px solid black;
+		}
+
+		section>* {
+			color: red;
+			background: blue;
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+		<p class="a">A</p>
+		<p class="b">B</p>
+		<div>
+			<p class="c">C</p>
+			<div>
+				<p>H</p>
+			</div>
+			<p class="d">B</p>
+			<p class="d">D</p>
+		</div>
+	</section>
+</body>
+
+</html>

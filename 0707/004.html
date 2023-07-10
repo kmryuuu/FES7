@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마진 패딩</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: royalblue;
+
+        }
+
+        .parents {
+            width: 300px;
+            margin: 0 auto;
+            /* padding: 1px; */
+            background-color: green;
+
+        }
+
+        .child {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin: 20px;
+            border: solid 1px black;
+
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            border: solid 1px black;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parents">
+        <div class="child">box2</div>
+        <div class="child">box2</div>
+    </div>
+    <div class="box"></div>
+</body>
+
+</html>

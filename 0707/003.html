@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 모델</title>
+    <style>
+        .box1 {
+            background-color: skyblue;
+            width: 100px;
+            height: 200px;
+            /* height: 100%; 는 부모인 body에 높이값이 없어서 적용되지 않는다.*/
+            border: 10px solid royalblue;
+            /* 박스의 테두리도 박스의 영역으로 포함하겠다 */
+            box-sizing: border-box;
+        }
+
+        .box2 {
+            background-color: gold;
+            /* box2의 부모가 높이 200px이니 100px로 적용 */
+            height: 50%;
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: salmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        box1
+        <div class="box2">
+            box2
+        </div>
+    </div>
+    <div class="box3">
+        box3
+    </div>
+</body>
+
+</html>
