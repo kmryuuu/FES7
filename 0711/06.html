@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        header {
+            background-color: skyblue;
+            height: 100px;
+        }
+
+        /* basis 0으로 주면 정확히 2:1로 나눈다 */
+        section,
+        aside {
+            flex-basis: 0;
+        }
+
+        section {
+            background-color: salmon;
+            height: 300px;
+            flex-grow: 2;
+        }
+
+        aside {
+            background-color: gold;
+            height: 300px;
+            flex-grow: 1;
+        }
+
+        footer {
+            background-color: slateblue;
+            height: 100px;
+        }
+
+        .container {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header>header</header>
+        <div class="container">
+            <section>section</section>
+            <aside>aside</aside>
+        </div>
+        <footer>footer</footer>
+    </div>
+</body>
+
+</html>
