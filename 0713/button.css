@@ -1,0 +1,67 @@
+button {
+    margin: 5px;
+}
+
+/* 기본 버튼 */
+.btn {
+    width: 88px;
+    height: 32px;
+    background-color: #2D3848;
+    color: #CBD5DF;
+    font-weight: bold;
+    border: 1px solid #1A202C;
+}
+
+/* 활성화 됐을때만 준다 */
+.btn:enabled {
+    box-shadow: inset 1px 1px #4A5568;
+}
+
+.btn:enabled:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.btn:enabled:active {
+    box-shadow: inset 1px 1px #262F3E;
+}
+
+/* 버튼 비활성화 */
+
+.btn:disabled {
+    color: #4A5568;
+    background-color: #3A4556;
+    border: 1px solid #343E4E;
+}
+
+/* 버튼 yes */
+.positive {
+    color: #439AFF;
+}
+
+.positive:enabled:hover {
+    background-color: #439AFF;
+    box-shadow: inset 1px 1px #73B4FF;
+    border: 1px solid #439AFF;
+}
+
+.positive:enabled:active {
+    box-shadow: inset 1px 1px #3B78BE;
+}
+
+/* 버튼 delete */
+.negative {
+    color: #EB5757;
+}
+
+.negative:enabled:hover {
+    color: #fff;
+    text-decoration: underline;
+    background-color: #EB5757;
+    box-shadow: inset 1px 1px #FD6F6F;
+    border: 1px solid #EB5757;
+}
+
+.negative:enabled:active {
+    box-shadow: inset 1px 1px #D94242;
+}

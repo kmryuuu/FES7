@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: royalblue;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box:nth-child(even) {
+            background-color: seagreen;
+        }
+
+        .scale {
+            /* (0,0) 기준점 */
+            /* transform-origin: 0 0; */
+            transition: all 0.3s;
+        }
+
+        .scale:hover {
+            /* transform: scale(1.2); */
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box scale">
+        box
+    </div>
+    <div class="box">
+        box
+    </div>
+</body>
+
+</html>

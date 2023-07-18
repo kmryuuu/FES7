@@ -114,6 +114,7 @@ height: calc(1em * 1.6 * 2);
 	text-decoration: underline;
 	/* ::after 기준 */
 	position: relative;
+  padding: 3px 6px;
 	width: 60px;
 }
 

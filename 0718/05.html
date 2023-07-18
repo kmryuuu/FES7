@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .a11y-hidden {
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+        }
+
+        button {
+            width: 48px;
+            height: 48px;
+            border: 0;
+            background: none;
+            padding: 0;
+        }
+
+        .btn-img {
+            width: 48px;
+            height: 48px;
+        }
+
+        .btn-bg {
+            width: 48px;
+            height: 48px;
+            background: #fff url(./img/icon-home.svg) no-repeat 50% 50% / 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" class="btn-img">
+        <img src="./img/icon-home.svg" alt="home">
+    </button>
+    <button type="button" class="btn-bg">
+        <span class="a11y-hidden">Home</span>
+    </button>
+</body>
+
+</html>
