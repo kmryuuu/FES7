@@ -21,9 +21,10 @@ body {
     font-family: 'Pretendard-Regular', sans-serif;
 }
 
-h1 {
+h1, h2, h3 {
     margin: 0;
     padding: 0;
+    font: inherit;
 }
 
 img {
@@ -39,7 +40,37 @@ a {
     font: inherit;
   }
 
+  button {
+    border: 0;
+    background: none;
+  }
+
+button:enabled {
+    cursor: pointer;
+}
+
+ol, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
 /* CSS 적용 ----------------------- */
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
 
 /* header */
 body {
@@ -68,6 +99,35 @@ body {
     width: 156px;
 }
 
+.header .login-text {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.header .login-text p::after {
+    content: '|';
+    color: #d8ddde;
+    margin-left: 24px;
+}
+
+.header .login-text p strong {
+    font-family: 'Pretendard-Bold';
+    box-shadow: inset 0 -0.5em 0 rgba(255,79,110,0.8);
+}
+
+@media (max-width: 600px) {
+    .header .login-text p {
+        position: absolute;
+        top: 140px;
+        right: 30px;
+    }
+
+    .header .login-text p::after {
+        display: none;
+    }
+}
+
 /* footer */
 
 .footer {
@@ -79,7 +139,7 @@ body {
 
 /* 버튼 */
 /* a태그가 인라인 요소이기 때문에 */
-.btn-join {
+[class^='btn'] {
     display: inline-flex;
     height: 40px;
     padding: 0 20px 0 52px;
@@ -89,6 +149,14 @@ body {
     background-size: 32px;
     background-position: 10px 50%;
     align-items: center;
+}
+
+.btn-join {
+    background-image: url(../img/icon-login.svg);
+}
+
+.btn-logout {
+    background-image: url(../img/icon-logout.svg);
 }
 
 /* 로그인 */
@@ -140,7 +208,7 @@ body {
 }
 
 /* 로그인 form */
-.form {
+.login .form {
     width: 392px;
     /* background-color: skyblue; */
     margin: 40px auto 50px;
@@ -156,9 +224,9 @@ body {
 .form input {
     width: 100%;
     height: 48px;
-    padding: 0;
     border: 0;
     border-bottom: 1px solid #677880;
+    box-sizing: border-box;
     padding: 10px;
     font-size: 20px;
     border-radius: 4px 4px 0 0;
@@ -176,4 +244,17 @@ form > div {
     color: #f4f5f5;
     font-size: 16px;
     border-radius: 4px;
+}
+
+.form textarea {
+    display: block;
+    width: 100%;
+    height: 360px;
+    /* aspect-ratio: 1/1; */
+    border: 1px solid #677880;
+    border-radius: 4px;
+    resize: none;
+    box-sizing: border-box;
+font: inherit;
+    padding: 10px;
 }

@@ -1,0 +1,48 @@
+.wrapper {
+    box-shadow: inset 0 0 20px red;
+    width: 800px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* .wrapper a {
+    background-color: gold;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    border-radius: 50%;
+} */
+
+/* 위에 대신에 아래가 더 안정성 있다 */
+.fruit {
+    background-color: gold;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    border-radius: 50%;
+}
+
+/* 유지보수 관점에서는 아래 CSS는 불리하다. */
+/* .fruit:nth-child(1) {
+    background-color: lemonchiffon;
+}
+
+.fruit:nth-child(2) {
+    background-color: orange;
+}
+
+.fruit:nth-child(3) {
+    background-color: orangered;
+} */
+
+/* 공통 분모는 하나의 클래스, 개별적인건 클래스 추가 */
+/* .lemon {
+    background-color: antiquewhite;
+} */
+
+/* fruit이면서 lemon인 클래스 */
+.fruit.lemon {
+    background-color: antiquewhite;
+}
