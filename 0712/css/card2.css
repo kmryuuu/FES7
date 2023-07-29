@@ -82,11 +82,12 @@
 }
 
 .ell2 {
-overflow: hidden;
-display: -webkit-box;
--webkit-box-orient: vertical;
--webkit-line-clamp: 2;
-height: calc(1em * 1.6 * 2);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 1.6;
+  height: calc(1em * 2 * 1.6);
 }
 
 /* flex로 인해 한줄 말줄임이 되지 않아 넣어준다. */
@@ -105,8 +106,7 @@ height: calc(1em * 1.6 * 2);
 }
 
 .c-content .ell2 {
-	margin-bottom: 16px;
-	line-height: 160%;
+  margin-bottom: 16px;
 }
 
 .read {

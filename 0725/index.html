@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 체크박스 커스텀 */
+
+        .txt-hide {
+            /* 기본 체크박스 숨김 처리 */
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip-path: inset(50%);
+        }
+
+        .lable-hold {
+            position: relative;
+        }
+
+        .lable-hold::before {
+            display: inline-block;
+            content: '';
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            border: 1px solid black;
+        }
+
+        /* 그냥 focus로 하면 계속 focus 상태로 인지해서 사라지지 않기에 키보드로만 focus하는 경우인 focus-visible로 넣어준다 */
+        .inphold:focus-visible+.lable-hold::before {
+            outline: 2px solid teal;
+            outline-offset: 2px;
+        }
+
+        .lable-hold::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 20px;
+            width: 22px;
+            height: 22px;
+            background: url(./img/checkmark.png) 0 0 / 22px no-repeat;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        /* 이미지가 있는곳이 after이기 때문에 인접형제를 선택 */
+        .inphold:checked+.lable-hold::after {
+            left: 0;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="inpHold" class="inphold txt-hide">
+    <label for="inpHold" class="lable-hold">로그인 상태 유지</label>
+</body>
+
+</html>
