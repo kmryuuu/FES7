@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+
+  <body>
+    <script>
+      let str = "Hello World";
+      // Slice (시작 인덱스, 종료 인덱스) // 종료 인덱스 바로 직전(-1)까지 잘라낸다.
+      console.log(str.slice(0, 5));
+      console.log(str.slice(0, 6));
+      console.log(str.slice(7, 3)); // 작동은 하지만 빈문자열이 나옵니다.
+      console.log(str.slice(2));
+      // console.log(str.slice(, 5)); //error
+      console.log(str.slice(-6, 0)); // 작동은 하지만 빈문자열이 나옵니다.
+      console.log(str.slice(-6));
+
+      //substring (시작 인덱스, 종료 인덱스)
+      //시작 인덱스부터 종료 인덱스 바로 직전(-1)까지 잘라냅니다.
+
+      //문제 (indexOf, search, slice, substring 4개를 사용하여 출력 문자열을 출력해주세요.)
+      let str2 = "paullab CEO leehojun CTO kimdohyeon";
+
+      //출력 문자열
+      //1. CEO leehojun
+      //2. CTO kimdohyeon
+
+      console.log(str2.indexOf("CEO leehojun"));
+    </script>
+  </body>
+</html>
