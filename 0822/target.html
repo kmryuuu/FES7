@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+
+  <body>
+    <article class="parent">
+      <ol>
+        <li><button class="btn-first" type="button">버튼1</button></li>
+        <li><button type="button">버튼2</button></li>
+        <li><button type="button">버튼3</button></li>
+      </ol>
+    </article>
+
+    <script>
+      // const parent = document.querySelector(".parent");
+      // parent.addEventListener("click", function (event) {
+      //   console.log(event.target);
+      //   console.log(event.currentTarget);
+      // });
+
+      // button에는 하위요소가 텍스트기 때문에 텍스트만 바뀌지만
+      // li는 하위요소에 button이 있어서 button까지 텍스트로 바뀐다.
+
+      const parent = document.querySelector(".parent");
+      parent.addEventListener("click", function (event) {
+        console.log(event.target);
+
+        // 이벤트가 발생한 대상을 조건식으로 특정하기
+        if (event.target.nodeName === "BUTTON") {
+          event.target.textContent = "버튼4";
+        }
+      });
+
+      // 화살표 함수의 this는 상위 스코프를 가리킨다. 아래 코드에서는 전역이니까 window
+      // 화살표 함수 안에서 이벤트가 발생한 요소를 알기 위해서는 currentTarget을 쓴다.
+      // 	const parent = document.querySelector('.parent');
+      // parent.addEventListener('click', function (event) => {
+      //     console.log(this);
+      // });
+
+      // 일반 함수에서 this는 parent를 가리킨다.
+      // const parent = document.querySelector('.parent');
+      // parent.addEventListener('click', function (event) {
+      //     console.log(this);
+      // });
+
+      const myObj = {
+        name: "jaehyun",
+        walk() {
+          parent.addEventListener("click", () => {
+            // this는 상위 스코프인 myObj를 가리킨다.
+            console.log(this.name + " is walking");
+          });
+        },
+      };
+    </script>
+  </body>
+</html>
