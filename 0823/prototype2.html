@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+
+  <body>
+    <script>
+      // arr 가 hasOwnProperty를 사용할수 있는것은 prototype 을 통해서 상속 받았기 때문!!
+      const obj = {
+        name: "test",
+      };
+
+      console.log(obj.hasOwnProperty("name"));
+
+      const arr = [1, 2, 3];
+
+      console.log(arr.hasOwnProperty("name"));
+
+      function Parent() {
+        this.name = "재현";
+      }
+      Parent.prototype.rename = function (name) {
+        this.name = name;
+      };
+      Parent.prototype.sayName = function () {
+        console.log(this.name);
+      };
+
+      function Child() {
+        Parent.call(this); // 함수를 불러온다. parent의 this를 child의 인스턴스를 바라보게 만든다.
+        // 아무런 프로퍼티도 만들지 않았지만 parent의 프로퍼티를 쓸수있게 만든다.
+      }
+
+      Child.prototype = Object.create(Parent.prototype);
+      // parent의 프로토타입이 child의 프로토타입이 연결 되어있다
+    </script>
+  </body>
+</html>
