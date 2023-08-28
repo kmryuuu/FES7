@@ -1,0 +1,38 @@
+// Scss
+// .box {
+//     &:focus {}
+//     // 가상선택자
+//     &:hover {}
+//     &:active {}
+//     &:first-child {}
+//     &:nth-child(2) {}
+//     &::after {}
+//     // 가상요소
+//     &::before {}
+// }
+
+nav {
+  ul {
+    border: solid 1px black;
+    display: flex;
+    justify-content: space-between;
+    li {
+      list-style: none;
+      &:first-child {
+        color: white;
+      }
+      &:nth-child(1) {
+        background-color: red;
+      }
+      &:nth-child(2) {
+        background-color: green;
+      }
+      &:nth-child(3) {
+        background-color: blue;
+      }
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+// 'assets/img/icon_font_awesome1.png'
+// 'assets/img/icon_font_awesome2.png'
+// 'assets/img/icon_font_awesome3.png'
+$img-path: "./assets/img/";
+$img-name: "background.png";
+$icon-name: "icon_font_awesome";
+
+.test {
+  background: url($img-path + $img-name);
+}
+
+.test2 {
+  background: url($img-path + $icon-name + "1.png");
+}
+
+//색상
+$red: #ee4444;
+$black: #222;
+$bg-color: #3e5e9e;
+$link-color: red;
+$p-color: #282a36;
+
+//폰트사이즈
+$font-p: 13px;
+$font-h1: 28px;
+
+//폰트
+$base-font: "Noto Sans KR", sans-serif;
+
+// lists
+$sizes: 40px, 50px, 80px;
+$valid-sides: top, bottom, left, right;
+
+//maps
+$font-sizes: (
+  "h1": 45px,
+  "h2": 19px,
+  "p": 16px,
+);
+
+$font-sizes-test: (
+  "one": #fff,
+  "two": #ff0,
+  "three": #f00,
+);
+
+// 1. lists
+// 0부터 시작하지 않습니다.
+.title_list1 {
+  font-size: nth($sizes, 1);
+}
+
+.title_list2 {
+  font-size: nth($sizes, -1);
+}
+
+// 이 문법은 자주 사용하지 않습니다.
+.title_list3 {
+  font-size: nth($list: $sizes, $n: 2);
+}
+
+// 2. maps
+.title_map1 {
+  font-size: map-get($font-sizes, "h1");
+}
+
+.title_map2 {
+  color: map-get($font-sizes-test, "three");
+}
+
+// 이 문법은 자주 사용하지 않습니다.
+.title_map3 {
+  color: map-get($map: $font-sizes, $key: "h1");
+}
+
+// 연습문제 1번 maps을 사용하여 아래와 같이 출력되도록 하세요.
+// maps에 저장되어 있는 key는 'back', 'icon'이 있습니다.
+// path라는 변수도 사용하셔야 합니다.
+nav {
+  background-image: url("assets/img/background.png");
+}
+
+.home {
+  background: url("assets/img/icon_font_awesome_home.png");
+}
+
+// 연습문제 2번 lists를 사용해서 아래와 같이 출력되도록 하세요.
+// lists에 저장되어 있는 값은 'left', 'right', 'bottom'...
+.title {
+  border-bottom: 1px solid black;
+}
+
+//답
+$path: "./assets/img";
+$img-set: (
+  "back": $path + "background.png",
+  "icon": $path + "icon_font_awesome",
+);
+
+nav {
+  background-image: url(map-get($img-set, "back"));
+}
+
+// 저는 '네이스팅'에서 지역변수는 선언하지 않습니다.
+.one {
+  // 지역변수
+  // 더 권장하지 않습니다.
+  $value: red !global; // 밖으로 꺼내서 전역변수로 써야한다.
+  color: $value;
+
+  .three {
+    background-color: $value;
+  }
+}
+
+// error 납니다.
+.two {
+  color: $value; // 지역변수이기 때문에 에러가 난다.
+}

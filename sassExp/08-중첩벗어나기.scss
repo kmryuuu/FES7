@@ -1,0 +1,16 @@
+// .one {
+//   color: red;
+//   .two {
+//     color: green;
+//     .three {
+//       color: blue;
+//       @at-root .four {
+//         color: pink;
+//       } // 다른 곳에서 사용할 수 있기 때문에, 그렇지만 사용안한다.
+//     }
+//   }
+// }
+
+// .four {
+//     color: pink; // 이렇게 사용하는걸 추천
+// }
