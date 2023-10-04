@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리덕스</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300&family=Fascinate&family=Kdam+Thmor+Pro&family=Noto+Sans+KR:wght@300&family=Open+Sans&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .container {
+        display: grid;
+        /* 3개를 만들고 1fr (비율)로 만들겠다 */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 10px;
+        border: 5px solid black;
+      }
+
+      .item {
+        border: 5px solid orange;
+        height: 100px;
+        padding: 20px;
+        font-size: 32px;
+      }
+
+      .item:nth-child(1) {
+        font-family: 'Anek Malayalam', sans-serif;
+      }
+      .item:nth-child(2) {
+        font-family: 'Fascinate', sans-serif;
+      }
+      .item:nth-child(3) {
+        font-family: 'Kdam Thmor Pro', sans-serif;
+      }
+      .item:nth-child(4) {
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+      .item:nth-child(5) {
+        font-family: 'Open Sans', sans-serif;
+      }
+      .item:nth-child(6) {
+        font-family: 'Roboto', sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 텍스트를 입력 받는 input -->
+    <input type="text" id="inputText" />
+
+    <!-- dispatch에는 action이 들어가고 액션에는 type이 무조건 들어가야한다. -->
+    <!-- type을 제외한 두번째 인자는 payroad (페이로드) -->
+    <!-- 페이로드의 이름은 text고 value값을 전달하고 있다. -->
+    <!-- dispatch 함수로 reducer에 있는 action에 전달하고 있다. -->
+    <input
+      type="button"
+      value="눌러주세요"
+      onClick="store.dispatch({type:'TEXT', text:document.querySelector('#inputText').value})"
+    />
+    <input
+      type="button"
+      value="Rounded"
+      onClick="store.dispatch({type: 'STYLE_BORDER', borderRadius: '10px'})"
+    />
+    <input
+      type="button"
+      value="Circle"
+      onClick="store.dispatch({type: 'STYLE_BORDER', borderRadius: '30px'})"
+    />
+    <input
+      type="button"
+      value="Rect"
+      onClick="store.dispatch({type: 'STYLE_BORDER', borderRadius: '0px'})"
+    />
+    <input type="button" value="Red" />
+    <input type="button" value="Green" />
+    <input type="button" value="Blue" />
+
+    <div class="container">
+      <!-- <div id="item1" class="item"></div>
+      <div id="item2" class="item"></div>
+      <div id="item3" class="item"></div>
+      <div id="item4" class="item"></div>
+      <div id="item5" class="item"></div>
+      <div id="item6" class="item"></div> -->
+    </div>
+
+    <script>
+      const container = document.querySelector('.container');
+      // state를 수정할 수 있는건 Reducer
+      // reducer가 반환하는 값이 state의 값이 된다.
+      function reducer(state, action) {
+        if (state === undefined) {
+          // state 가 아무것도 없을때 아래로 변경해라
+          return {
+            text: 'hello',
+            color: 'black',
+            border: '5px solid orange',
+            borderRadius: '0px',
+          };
+        } else if (action.type === 'TEXT') {
+          return {
+            // 다음 상태값이 된다.
+            // ...state 는 위에 state 값을 그대로 나열한것
+            ...state,
+            text: action.text,
+          };
+        } else if (action.type === 'STYLE_BORDER') {
+          return {
+            // 다음 상태값이 된다.
+            // ...state 는 위에 state 값을 그대로 나열한것
+            ...state,
+            text: action.borderRadius,
+          };
+        }
+      }
+
+      // store를 생성합니다.
+      const store = Redux.createStore(
+        reducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ &&
+          window.__REDUX_DEVTOOLS_EXTENSION__()
+      );
+
+      // render 함수
+      // getState = state를 가져온다.
+      function item1() {
+        const state = store.getState();
+        console.log(state);
+        const template = `<div id="item1" class="item" style="border-radius: ${state.borderRadius}; border:${state.border}">${state.text}</div>`;
+
+        container.innerHTML += template;
+      }
+
+      // 랜더함수를 구독시킨다.
+      store.subscribe(item1);
+      item1();
+
+      function item2() {
+        const state = store.getState();
+        console.log(state);
+        const template = `<div id="item2" class="item" style="border-radius: ${state.borderRadius}; border:${state.border}">${state.text}</div>`;
+
+        container.innerHTML += template;
+      }
+
+      item2();
+
+      function item3() {
+        const state = store.getState();
+        console.log(state);
+        const template = `<div id="item3" class="item" style="border-radius: ${state.borderRadius}; border:${state.border}">${state.text}</div>`;
+
+        container.innerHTML += template;
+      }
+
+      item3();
+
+      function item4() {
+        const state = store.getState();
+        console.log(state);
+        const template = `<div id="item4" class="item" style="border-radius: ${state.borderRadius}; border:${state.border}">${state.text}</div>`;
+
+        container.innerHTML += template;
+      }
+
+      item4();
+
+      function item5() {
+        const state = store.getState();
+        console.log(state);
+        const template = `<div id="item5" class="item" style="border-radius: ${state.borderRadius}; border:${state.border}">${state.text}</div>`;
+
+        container.innerHTML += template;
+      }
+
+      item5();
+
+      function item6() {
+        const state = store.getState();
+        console.log(state);
+        const template = `<div id="item6" class="item" style="border-radius: ${state.borderRadius}; border:${state.border}">${state.text}</div>`;
+
+        container.innerHTML += template;
+      }
+
+      item6();
+    </script>
+  </body>
+</html>

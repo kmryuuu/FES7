@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      article {
+        display: inline-block;
+        border: 3px solid black;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      .viewer {
+        display: block;
+        font-size: 24px;
+        color: teal;
+        margin: 50px 0 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article>
+      <strong>1</strong>
+      <input type="text" class="input-txt" />
+      <button class="btn-push" onclick="push()">적용</button>
+    </article>
+
+    <script>
+      // 테스트가 불가능한 파일
+      // 전역변수의 사용. 함수가 아니기 때문에 테스트 자체가 불가능하다.
+      const viewer = document.querySelector('.viewer');
+      viewer.textContent = 'hello lions';
+
+      // 재사용성이 떨어진다.
+      function push() {
+        const inpTxt = document.querySelector('.input-txt');
+        viewer.textContent = inpTxt.value;
+      }
+
+      // 테스트가 가능하려면
+    </script>
+  </body>
+</html>
